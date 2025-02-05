@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 24px;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    margin-bottom: 24px;
+  }
+  
+  .title {
+    font: 700 24px "Lato", sans-serif;
+    color: #333;
+  }
+  
+  .messageContainer {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .inputArea {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+  
+  .inputText {
+    flex: 1;
+    border: none;
+    outline: none;
+    font: 400 14px "Roboto", sans-serif;
+    color: #666;
+    background-color: transparent;
+  }
+  
+  .sendButton {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font: 500 14px "Roboto", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .sendButton:hover {
+    background-color: #333;
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      padding: 16px;
+    }
+  }

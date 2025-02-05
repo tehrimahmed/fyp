@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff; /* Plain white background */
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 16px;
+  gap: 16px;
+  max-width: 800px; /* Larger chat box width */
+  margin: 100px auto 0; /* Move the chat box lower */
+  background-color: #fff;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 70vh; /* Larger height */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.title {
+  font: 700 20px "Lato", sans-serif;
+  color: #333;
+}
+
+.profileIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.messageContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputArea {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.inputText {
+  flex: 1;
+  border: none;
+  outline: none;
+  font: 400 14px "Roboto", sans-serif;
+  color: #666;
+  background-color: transparent;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.actionIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.actionIcon:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+  .mainContent {
+    padding: 12px;
+    max-width: 90%; /* Adjust for smaller screens */
+  }
+
+  .header {
+    padding: 0 12px;
+  }
+
+  .inputWrapper {
+    padding: 6px 10px;
+  }
+}
