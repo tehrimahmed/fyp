@@ -1,7 +1,10 @@
 .container {
+  background: #f2f4f5;
   display: flex;
-  min-height: 100vh;
-  background-color: #fff; /* Plain white background */
+  gap: 40px;
+  padding: 24px;
+  height: 100vh; /* 90% viewport height */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .mainContent {

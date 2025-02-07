@@ -1,37 +1,78 @@
-.container {
+/* Reset and Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px;
-  background: #fff;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
   position: relative;
 }
 
-/* Logo at Top Right */
+.pageWrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Background Paths */
+.backgroundPaths {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color:#253439;
+  z-index: 0;
+}
+
+/* Floating SVG Paths */
+.floatingPaths {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  padding: 24px;
+}
+
+/* Logo */
 .logo {
-  font-family: 'Baloo Bhai', cursive; /* Apply Baloo Bhai */
-  font-size: 80px;
-  font-weight: bold;
-  color: #000;
   position: absolute;
   top: 24px;
   left: 24px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #253439;
 }
 
 /* Hero Section */
 .heroSection {
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 48px;
+  margin-top: 20px;
+  position: relative;
 }
 
 .heroContent {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 48px;
-  padding-left: 120px; /* Add padding to shift content to the right */
+  padding-left: 120px;
 }
 
 .heroImageContainer {
@@ -39,7 +80,7 @@
 }
 
 .heroImage {
-  max-width: 300px;
+  width: 250px;
   height: auto;
 }
 
@@ -48,49 +89,62 @@
 }
 
 .heroTitle {
-  font-family: 'Lato', sans-serif;
-  font-style: italic; 
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
-  margin-bottom: 24px;
-  color: #333;
+  margin-bottom: 20px;
   line-height: 1.2;
+  color: #333;
   text-align: left;
+}
+
+.heroSubtitle {
+  font-size: 45px;
+  font-weight: bold;
+  color: #253439;
 }
 
 .heroTextContent {
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the button horizontally */
+  text-align: center;
 }
 
 .heroDescription {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 32px;
-  line-height: 1.6;
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 24px;
+  line-height: 1.5;
   text-align: left;
 }
 
+/* Get Started Button */
 .heroButton {
-  background: #000;
+  background-color: #253439;
   color: #fff;
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
   font-size: 13px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  align-items: center;
+  display: block; /* Ensures it takes full width available */
+  align-self: flex-start; /* Works inside a flex container */  
 }
 
 .heroButton:hover {
-  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
-/* Horizontal Line */
+/* Horizontal Line Divider */
 .horizontalLine {
   width: 100%;
-  height: 1px;
-  background: #e0e0e0;
-  margin: 48px 0;
+  height: 2px;
+  background: #ccc;
+  margin: 40px 0;
 }
 
 /* Features Section */
@@ -100,49 +154,67 @@
   gap: 24px;
   max-width: 1200px;
   width: 100%;
+  margin-top: 40px;
 }
 
 .featureBox {
-  padding: 24px;
-  background: #000;
+  padding: 20px;
+  background-color: #253439;
   border-radius: 16px;
   text-align: center;
   color: #fff;
-  height: 250px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .featureBox:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
 }
 
 .featureTitle {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .featureDescription {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
+/* Responsive Design */
 @media (max-width: 991px) {
   .heroContent {
     flex-direction: column;
     gap: 24px;
+    padding-left: 0;
   }
 
   .heroImage {
-    max-width: 200px;
+    width: 200px;
   }
 
   .featuresSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .featuresSection {
     grid-template-columns: 1fr;
   }
+  
+  .logo {
+    font-size: 40px;
+  }
+  
+  .heroTitle {
+    font-size: 32px;
+  }
+
 }
