@@ -42,5 +42,6 @@
 /* Add logout icon specific styling */
 .logoutIcon {
   margin-top: auto; /* Pushes the logout to the bottom */
+  margin-bottom: 1rem; /* Pushes the logout to the bottom */
   color:#fff;
 }

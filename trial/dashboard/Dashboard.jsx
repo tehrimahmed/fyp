@@ -8,7 +8,7 @@ import { LearningAnalysis } from "./LearningAnalysis"
 import styles from "./Dashboard.module.css"
 
 function FloatingPaths({ position }) {
-  const offsetY = 0.1 * (typeof window !== "undefined" ? window.innerHeight : 0)
+  const offsetY = 0.1 * (typeof window !== "undefined" ? window.innerHeight-200 : 0)
 
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,

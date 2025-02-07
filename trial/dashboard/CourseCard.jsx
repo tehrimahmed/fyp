@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "./Dashboard.module.css";
 
 export const CourseCard = ({ title, author, imageUrl }) => {
+  const navigate = useNavigate(); // Initialize navigate
   return (
     <div className={styles.courseCard}>
       <div className={styles.courseInfo}>
@@ -13,7 +15,9 @@ export const CourseCard = ({ title, author, imageUrl }) => {
           <div className={styles.courseAuthor}>{author}</div>
         </div>
       </div>
-      <button className={styles.viewCourse}>View course</button>
+      <button className={styles.viewCourse} onClick={() => navigate("/chat")}>
+        View course
+      </button>
     </div>
   );
 };

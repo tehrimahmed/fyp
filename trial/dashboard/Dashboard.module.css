@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #f2f4f5
+  background-color: #f2f4f5;
 }
 
 .backgroundPaths {
@@ -35,60 +35,61 @@
   z-index: 1;
   background: transparent;
   display: flex;
-  gap: 40px;
-  padding: 24px;
+  gap: 2.5rem; /* 40px */
+  padding: 1.5rem; /* 24px */
   height: 100vh;
   overflow: hidden;
 }
 
 /* Main Content */
 .mainContent {
-  flex: 0 0 55%; /* Take up remaining space */
+  flex: 0 0 55%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  overflow-y: auto; /* Allow scrolling only for main content */
+  gap: 1.5rem; /* 24px */
+  overflow-y: auto;
   margin-top: 1rem;
 }
 
 /* Hello User Section */
 .userHeader {
-  border-radius: 14px;
+  border-radius: 0.875rem; /* 14px */
   background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.25rem 1rem; /* 4px 16px */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
 }
 
 .greeting {
-  font: 20 36px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  /* Assuming '20' is part of the font shorthand (or weight) and 36px is the size */
+  font: 400 2.25rem/1 Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 36px */
   color: #000;
 }
 
 .headerImage {
-  width: 130px;
+  width: 8.125rem; /* 130px */
   object-fit: contain;
 }
 
 .analysisContent {
   display: flex;
-  gap: 16px;
+  gap: 1rem; /* 16px */
   align-items: center;
 }
 
 /* Courses Section */
 .coursesSection {
-  border-radius: 14px;
+  border-radius: 0.875rem; /* 14px */
   background: #fff;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem; /* 24px */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
   max-height: 65%;
-  overflow-y: auto; /* Allow scrolling for courses */
+  overflow-y: auto;
   /* Hide scrollbar for IE, Edge, and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 /* Hide scrollbar for Chrome, Safari, and Opera */
 .coursesSection::-webkit-scrollbar {
@@ -98,19 +99,19 @@
 .coursesList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem; /* 16px */
 }
 
 .sectionTitle {
-  font: 400 24px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 1.5rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 24px */
   color: #000;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem; /* 24px */
 }
 
 .courseFilters {
   display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 1rem; /* 16px */
+  margin-bottom: 1.5rem; /* 24px */
 }
 
 .filter {
@@ -118,7 +119,7 @@
   border: none;
   opacity: 0.3;
   cursor: pointer;
-  font: 400 16px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 1rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 16px */
   color: #000;
   transition: opacity 0.2s;
 }
@@ -129,26 +130,26 @@
 }
 
 .courseCard {
-  border-radius: 14px;
+  border-radius: 0.875rem; /* 14px */
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem; /* 16px */
+  margin-bottom: 1rem; /* 16px */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
 }
 
 .courseInfo {
   display: flex;
-  gap: 16px;
+  gap: 1rem; /* 16px */
   align-items: center;
 }
 
 .courseImage {
-  width: 64px;
-  height: 72px;
-  border-radius: 12px;
+  width: 4rem; /* 64px */
+  height: 4.5rem; /* 72px */
+  border-radius: 0.75rem; /* 12px */
   background: #f0f0f0;
   display: flex;
   align-items: center;
@@ -158,114 +159,114 @@
 .courseDetails {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem; /* 8px */
 }
 
 .courseTitle {
-  font: 400 16px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 1rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 16px */
   color: #000;
 }
 
 .courseAuthor {
-  font: 400 13px Roboto, sans-serif;
+  font: 400 0.8125rem Roboto, sans-serif; /* 13px */
   color: #666;
 }
 
 .courseMeta,
 .courseRating {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem; /* 8px */
   align-items: center;
-  font: 400 13px Roboto, sans-serif;
+  font: 400 0.8125rem Roboto, sans-serif; /* 13px */
   color: #666;
 }
 
 .metaIcon {
-  width: 16px;
-  height: 16px;
+  width: 1rem; /* 16px */
+  height: 1rem; /* 16px */
   object-fit: contain;
 }
 
 .viewCourse {
-  border-radius: 8px;
+  border-radius: 0.5rem; /* 8px */
   background: #253439;
   color: #fff;
-  padding: 6px 12px;
-  font: 700 13px Roboto, sans-serif;
+  padding: 0.375rem 0.75rem; /* 6px 12px */
+  font: 700 0.8125rem Roboto, sans-serif; /* 13px */
   border: none;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
 }
 
 .viewCourse:hover {
-  background: #3d7a9e;
-  transform: translateY(-2px);
+  opacity: 0.8;
+  transform: translateY(-0.125rem); /* 2px */
 }
 
 /* Right Section */
 .rightSection {
-  flex: 0 0 30%; /* Fixed width for the right section */
+  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  overflow-y: auto; /* Allow scrolling for the right section */
+  gap: 2.5rem; /* 40px */
+  overflow-y: auto;
   margin-top: 1rem;
 }
 
 /* Progress Section */
 .progressSection {
-  border-radius: 14px;
+  border-radius: 0.875rem; /* 14px */
   background: #fff;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem; /* 24px */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
 }
 
 .progressHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem; /* 24px */
 }
 
 .progressTitle {
-  font: 400 24px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 1.5rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 24px */
   color: #000;
 }
 
 .progressSubtitle {
-  font: 400 16px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 1rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 16px */
   color: #666;
 }
 
 .periodSelector {
-  border-radius: 8px;
+  border-radius: 0.5rem; /* 8px */
   background: #fff;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  font: 700 13px Roboto, sans-serif;
-  border: 1px solid #e0e0e0;
+  gap: 0.375rem; /* 6px */
+  padding: 0.5rem 1rem; /* 8px 16px */
+  font: 700 0.8125rem Roboto, sans-serif; /* 13px */
+  border: 0.0625rem solid #e0e0e0; /* 1px */
   cursor: pointer;
 }
 
 .progressChart {
   width: 80%;
-  margin-top: 24px;
+  margin-top: 1.5rem; /* 24px */
 }
 
 /* LearnBot Section */
 .learnBotSection {
-  border-radius: 14px;
+  border-radius: 0.875rem; /* 14px */
   background: #fff;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem; /* 24px */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
 }
 
 .logo {
-  font-size: 24px; /* Logo size */
+  font-size: 1.5rem; /* 24px */
   font-weight: bold;
-  margin-bottom: 40px; /* Space below the logo */
+  margin-bottom: 2.5rem; /* 40px */
 }
 
 .learnBotContent {
@@ -275,22 +276,22 @@
 }
 
 .learnBotTitle {
-  font: 400 24px Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 1.5rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 24px */
   color: #000;
 }
 
 .learnBotDescription {
-  font: 400 16px Roboto, sans-serif;
+  font: 400 1rem Roboto, sans-serif; /* 16px */
   color: #666;
-  margin-top: 8px;
+  margin-top: 0.5rem; /* 8px */
 }
 
 .tryButton {
-  border-radius: 8px;
+  border-radius: 0.5rem; /* 8px */
   background: #253439;
   color: #fff;
-  padding: 12px 24px;
-  font: 700 13px Roboto, sans-serif;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  font: 700 0.8125rem Roboto, sans-serif; /* 13px */
   border: none;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
@@ -298,61 +299,60 @@
 
 .tryButton:hover {
   background: #3d7a9e;
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem); /* 2px */
 }
 
 .learnBotImage {
-  width: 125px;
+  width: 7.8125rem; /* 125px */
   object-fit: contain;
 }
 
 @media (max-width: 991px) {
   .dashboard {
     flex-direction: column;
-    padding: 16px;
+    padding: 1rem; /* 16px */
   }
 
   .navigation {
     width: 100%;
-    height: 80px;
+    height: 5rem; /* 80px */
     flex-direction: row;
-    padding: 16px;
+    padding: 1rem; /* 16px */
   }
 
   .navIcons {
     flex-direction: row;
-    gap: 16px;
+    gap: 1rem; /* 16px */
     margin-top: 0;
   }
 
   .userHeader {
-    padding: 16px;
+    padding: 1rem; /* 16px */
   }
 
   .headerImage {
-    width: 120px;
+    width: 7.5rem; /* 120px */
   }
 
   .analysisCard {
-    padding: 16px;
+    padding: 1rem; /* 16px */
   }
 
   .courseCard {
-    padding: 16px;
+    padding: 1rem; /* 16px */
   }
 
   .learnBotSection {
-    padding: 16px;
+    padding: 1rem; /* 16px */
   }
 
   .quizResults {
-    margin-top: 16px;
-    font: 400 14px Roboto, sans-serif;
+    margin-top: 1rem; /* 16px */
+    font: 400 0.875rem Roboto, sans-serif; /* 14px */
     color: #333;
   }
 
   .quizResults p {
-    margin: 8px 0;
+    margin: 0.5rem 0; /* 8px 0 */
   }
 }
-
