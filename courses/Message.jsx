@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./Message.module.css";
 
-export const Message = ({ content, avatar, isUser, accentColor }) => {
+export const Message = ({ content, isUser, accentColor }) => {
   return (
     <div
       className={`${styles.messageContainer} ${isUser ? styles.reversed : ""}`}
     >
-      <img src={avatar} alt="Avatar" className={styles.userAvatar} />
       <div
         className={styles.messageBox}
         style={{ backgroundColor: isUser ? "#f0f4ff" : "#fff" }}

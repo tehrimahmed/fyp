@@ -27,7 +27,7 @@ function App() {
         <Route path="/profile" element={<UserProfile />} />
 
         {/* Chat Page */}
-        <Route path="/chat" element={<ChatLayout />} />
+        <Route path="/chat" element={<CourseChatWindow />} />
 
         {/* Learning Assessment Page */}
         <Route path="/assessment" element={<LearningAssessment />} />

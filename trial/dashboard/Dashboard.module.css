@@ -35,7 +35,7 @@
   z-index: 1;
   background: transparent;
   display: flex;
-  gap: 2.5rem; /* 40px */
+  gap: 2rem; /* 40px */
   padding: 1.5rem; /* 24px */
   height: 100vh;
   overflow: hidden;
@@ -46,32 +46,49 @@
   flex: 0 0 55%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* 24px */
+  gap: 1rem; /* 24px */
   overflow-y: auto;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 /* Hello User Section */
 .userHeader {
-  border-radius: 0.875rem; /* 14px */
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.25rem 1rem; /* 4px 16px */
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
+    border-radius: .875rem; 
+    background-color:#fff;
+    display:flex;
+    justify-content:start; /* Align items from start instead of space-between */
+    align-items:center;
+    padding:.25rem .5rem .25rem .5rem;
 }
+.userHeaderText{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    gap:0;
+    padding: 1.2rem;
+}
+.greeting{
+  background: -webkit-gradient(linear, left top, right bottom, from(#ed67ff), to(#01afe4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-family:'Baloo Bhai',-apple-system,'Roboto','Helvetica',sans-serif ;
+   font-size :2.2em ;  
+   letter-spacing: 1.5px;
+   margin-right:.5em;
+   margin-bottom: 0.5rem;
+   margin-top: 0.5rem;
+}
+.subGreeting{
+    font: 700 18px "Lato", sans-serif;  
+    margin-top:-10px;
+ }
+.headerImage{
+     width :8.125em ;
+     object-fit :contain ;
+     margin-left:auto ;/* Pushes image to right side */
 
-.greeting {
-  /* Assuming '20' is part of the font shorthand (or weight) and 36px is the size */
-  font: 400 2.25rem/1 Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 36px */
-  color: #000;
-}
+ }
 
-.headerImage {
-  width: 8.125rem; /* 130px */
-  object-fit: contain;
-}
 
 .analysisContent {
   display: flex;
@@ -208,7 +225,7 @@
   flex: 0 0 30%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; /* 40px */
+  gap: 2rem; /* 40px */
   overflow-y: auto;
   margin-top: 1rem;
 }
