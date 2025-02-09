@@ -1,14 +1,15 @@
-import React from "react";
-import { useState } from "react"
+"use client"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { CourseCard } from "./CourseCard"
 import { NavigationBar } from "./NavigationBar"
 import { UserHeader } from "./UserHeader"
 import { LearningAnalysis } from "./LearningAnalysis"
 import styles from "./Dashboard.module.css"
+import ChatBot from "./LSD"
 
 function FloatingPaths({ position }) {
-  const offsetY = 0.1 * (typeof window !== "undefined" ? window.innerHeight-1000 : 0)
+  const offsetY = 0.1 * (typeof window !== "undefined" ? window.innerHeight - 1000 : 0)
 
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,
@@ -70,15 +71,34 @@ const courseData = [
 ]
 
 export const Dashboard = () => {
-  const [quizResults, setQuizResults] = useState(null)
+  const [chatOpen, setChatOpen] = useState(false)
+  const [testResult, setTestResult] = useState(null)
 
+  // When the user chooses to take or retake the test, open the ChatBot modal.
   const handleTakeTest = () => {
-    const results = {
-      learningStyle: "Visual Learner",
-      strengths: "Problem Solving, Creativity",
-      weaknesses: "Time Management",
+    setChatOpen(true)
+  }
+
+  // When the ChatBot test is completed, update the testResult.
+  // (Note: the ChatBot’s internal "Return to Dashboard" button closes the modal.)
+  const handleTestComplete = (result) => {
+    setTestResult(result)
+  }
+
+  // Format the learning style result:
+  // If all scores are 0 or all are 1, label as "Balanced Learner";
+  // Otherwise, join the keys with a score of 1 using a slash.
+  const formatLearningStyle = (style) => {
+    const values = Object.values(style)
+    const total = values.length
+    const sum = values.reduce((acc, v) => acc + v, 0)
+    if (sum === 0 || sum === total) {
+      return "Balanced Learner"
     }
-    setQuizResults(results)
+    return Object.entries(style)
+      .filter(([_, value]) => value === 1)
+      .map(([key, _]) => key)
+      .join("/")
   }
 
   return (
@@ -135,25 +155,26 @@ export const Dashboard = () => {
           <div className={styles.learnBotSection}>
             <div className={styles.learnBotContent}>
               <div>
-                <h2 className={styles.learnBotTitle}>LearnBot</h2>
-                {quizResults ? (
+                <h2 className={styles.learnBotTitle}>
+                  {testResult ? "Learning Style" : "Diagnostic Test"}
+                </h2>
+                {testResult ? (
                   <div className={styles.quizResults}>
-                    <p>
-                      <strong>Learning Style:</strong> {quizResults.learningStyle}
+                    <p className={styles.learnBotDescription}>
+                      {formatLearningStyle(testResult)}
                     </p>
-                    <p>
-                      <strong>Strengths:</strong> {quizResults.strengths}
-                    </p>
-                    <p>
-                      <strong>Weaknesses:</strong> {quizResults.weaknesses}
-                    </p>
+                    <button className={styles.tryButton} onClick={handleTakeTest}>
+                      Retake Test
+                    </button>
                   </div>
                 ) : (
-                  <p className={styles.learnBotDescription}>Your personal AI Assistant</p>
+                  <>
+                    <p className={styles.learnBotDescription}>Your personal AI Assistant</p>
+                    <button className={styles.tryButton} onClick={handleTakeTest}>
+                      Take Test
+                    </button>
+                  </>
                 )}
-                <button className={styles.tryButton} onClick={handleTakeTest}>
-                  {quizResults ? "Retake Test" : "Give it a Go"}
-                </button>
               </div>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/70bc9d88e6578682c2e5f12d5ff69266676d75d988e8f84617bdbbbda1589a33?placeholderIfAbsent=true&apiKey=731e94bd1e004c13b41f7c516f681703"
@@ -164,9 +185,18 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
+      {chatOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <ChatBot
+              onClose={() => setChatOpen(false)}
+              onTestComplete={handleTestComplete}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
 export default Dashboard
-

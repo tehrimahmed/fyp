@@ -15,7 +15,7 @@ export const CourseCard = ({ title, author, imageUrl }) => {
           <div className={styles.courseAuthor}>{author}</div>
         </div>
       </div>
-      <button className={styles.viewCourse} onClick={() => navigate("/chat")}>
+      <button className={styles.viewCourse} onClick={() => navigate("/assessment")}>
         View course
       </button>
     </div>
