@@ -89,7 +89,12 @@ export const AuthForm = ({ type }) => {
       </div>
 
       <div className={styles.formActions}>
-        <button type="submit" className={styles.primaryButton}>
+        <button type="submit" className={styles.primaryButton}
+         onClick={() => {
+          // Navigate to the other form
+          navigate(isLogin ? "/dashboard" : "/dashboard");
+        }}>
+          {/* temp navogation */}
           {isLogin ? "Login now" : "Create account"}
         </button>
 

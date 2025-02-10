@@ -61,14 +61,43 @@ function BackgroundPaths() {
   )
 }
 
+// Dummy courses with extra details (CLOs and PLOs)
 const courseData = [
   {
-    title: "Learn Figma",
-    author: "by Christopher Morgan",
-    imageUrl:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/4be089ae68497b801a798319e81370f9b10c76fa85a75b660468cafe6f319c4b?placeholderIfAbsent=true&apiKey=731e94bd1e004c13b41f7c516f681703",
+    id: 1,
+    title: "Learn Mathematics",
+    author: "Christopher Morgan",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/3771/3771518.png",  // Math formula icon
+    duration: "8 weeks",
+    level: "Beginner",
+    rating: 4.8,
+    clos: ["CLO 1: Understand algebra", "CLO 2: Solve equations"],
+    plos: ["PLO 1: Critical thinking", "PLO 2: Problem solving"],
   },
-]
+  {
+    id: 2,
+    title: "UI/UX Design Fundamentals",
+    author: "Sarah Johnson",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/681/681662.png",  // Design tools icon
+    duration: "10 weeks",
+    level: "Intermediate",
+    rating: 4.9,
+    clos: ["CLO 1: User research", "CLO 2: Wireframing"],
+    plos: ["PLO 1: Creativity", "PLO 2: Design thinking"],
+  },
+  {
+    id: 3,
+    title: "Advanced Physics",
+    author: "Michael Smith",
+    imageUrl: "https://cdn-icons-png.flaticon.com/512/2941/2941552.png",  // Atom/physics icon
+    duration: "12 weeks",
+    level: "Advanced",
+    rating: 4.7,
+    clos: ["CLO 1: Mechanics", "CLO 2: Thermodynamics"],
+    plos: ["PLO 1: Analytical skills", "PLO 2: Research skills"],
+  },
+];
+
 
 export const Dashboard = () => {
   const [chatOpen, setChatOpen] = useState(false)
@@ -120,12 +149,6 @@ export const Dashboard = () => {
             <div className={styles.coursesList}>
               {courseData.map((course, index) => (
                 <CourseCard key={index} {...course} />
-              ))}
-              {courseData.map((course, index) => (
-                <CourseCard key={`repeat1-${index}`} {...course} />
-              ))}
-              {courseData.map((course, index) => (
-                <CourseCard key={`repeat2-${index}`} {...course} />
               ))}
             </div>
           </div>

@@ -228,11 +228,11 @@
   background: -webkit-gradient(linear, left top, right bottom, from(#253439   ), to(#2c3e50   ));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-   font-family:'Baloo Bhai',-apple-system,'Roboto','Helvetica',sans-serif ;
+   font: 7000 3rem "Lato", sans-serif; /* Converted from 48px */
    font-size :2.2em ;  
-   letter-spacing: 1.5px;
+   letter-spacing: 1px;
    margin-right:.5em;
-   margin-bottom: 0.5rem;
+   margin-bottom: 1rem;
    margin-top: 0.5rem;
 }
 .subGreeting{
@@ -286,19 +286,22 @@
   display: flex;
   flex-direction: column;
   gap: 1rem; /* 16px */
+  text-align: left;
 }
 
 .sectionTitle {
-  font: 400 1.5rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 24px */
+  font: 700 1.5rem "Lato", sans-serif; /* Converted from 48px */
   color: #000;
   margin-top: 0%;
-  margin-bottom: .2rem; /* 24px */
+  margin-bottom: .4rem; /* 24px */
 }
 
 .courseFilters {
   display: flex;
   gap: 1rem; /* 16px */
   margin-bottom: 1rem; /* 24px */
+  text-align: center;
+  justify-content: center;
 }
 
 .filter {
@@ -306,7 +309,7 @@
   border: none;
   opacity: 0.3;
   cursor: pointer;
-  font: 400 1rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 16px */
+  font: 700 15px "Lato", sans-serif;  
   color: #000;
   transition: opacity 0.2s;
 }
@@ -334,15 +337,22 @@
 }
 
 .courseImage {
-  width: 4rem; /* 64px */
-  height: 4.5rem; /* 72px */
-  border-radius: 0.75rem; /* 12px */
-  background: #f0f0f0;
+  width: 3rem;           /* Adjust width as needed */
+  height: 3rem;          /* Adjust height as needed */
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.courseImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
 .courseDetails {
   display: flex;
   flex-direction: column;
@@ -416,14 +426,15 @@
 }
 
 .progressTitle {
-  font: 400 1.5rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 24px */
+  font: 700 1.5rem "Lato", sans-serif; /* Converted from 48px */  
   color: #fff;
   text-align: left;
   margin: 0rem;
+  margin-bottom: 0.5rem; /* 8px */
 }
 
 .progressSubtitle {
-  font: 400 1rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 16px */
+  font: 700 16px "Lato", sans-serif;  
   color: #f2f4f5;
 }
 
@@ -470,16 +481,17 @@
 }
 
 .learnBotTitle {
-  font: 400 1.5rem Baloo Bhai, -apple-system, Roboto, Helvetica, sans-serif; /* 24px */
+  font: 600 1.5rem "Lato", sans-serif; /* Converted from 48px */
   color: #fff;
-  margin:0
+  margin:0;
+  margin-bottom:1rem;
 }
 
 .learnBotDescription {
-  font: 400 1rem Roboto, sans-serif; /* 16px */
+  font: 700 16px "Lato", sans-serif;  
   color: #f2f4f5;
   margin: 0.2rem; /* 8px */
-  margin-bottom: 1rem; /* 8px */
+  margin-bottom: 1.5rem; /* 8px */
   margin-left: 0rem; /* 8px */
 }
 

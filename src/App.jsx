@@ -4,10 +4,8 @@ import Dashboard from "../trial/dashboard/Dashboard";
 import AuthLayout from "../auth/AuthLayout";
 import HomePage from "../landing/HomePage";
 import UserProfile from "../user/userProfile/UserProfile";
-import ChatLayout from "../learning/chat/ChatLayout";
-import LearningAssessment from "../assessment/learningAssessment/LearningAssessment";
-import SelectCourse from "../courses/SelectCourse"; 
-import CourseChatWindow from "../courses/CourseChatWindow";
+import LearningAssessment from "../assessment/course/LearningAssessment";
+import CourseChatWindow from "../chat/CourseChatWindow";
 
 function App() {
   return (
@@ -31,9 +29,6 @@ function App() {
 
         {/* Learning Assessment Page */}
         <Route path="/assessment" element={<LearningAssessment />} />
-
-        {/* Select Course Page */}
-        <Route path="/learning/courses" element={<SelectCourse />} />
 
         {/* Course Chat Window */}
         <Route path="/learning/courses/:courseId/chat" element={<CourseChatWindow />} />

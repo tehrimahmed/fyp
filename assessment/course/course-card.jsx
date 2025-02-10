@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "./course-listing.module.css";
 
 export const CourseCard = ({
@@ -9,9 +8,8 @@ export const CourseCard = ({
   duration,
   level,
   rating,
+  onViewCourse,
 }) => {
-  const navigate = useNavigate(); // Initialize navigate function
-
   return (
     <div className={styles.courseCard}>
       <div className={styles.courseInfo}>
@@ -28,8 +26,8 @@ export const CourseCard = ({
           </div>
         </div>
       </div>
-      <button className={styles.startCourse} onClick={() => navigate("/chat")}>
-        Start Learning
+      <button className={styles.startCourse} onClick={onViewCourse}>
+        View Course
       </button>
     </div>
   );
